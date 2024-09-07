@@ -16,5 +16,48 @@ namespace ejercicio1
         {
             InitializeComponent();
         }
+
+        private void btnCopiar_Click(object sender, EventArgs e)
+        {
+            int cant = cmbNombre.Items.Count;
+            for(int i = 0; i < cant; i++)
+            {
+                string nombre = cmbNombre.Items[i].ToString();
+                cmbNombres2.Items.Add(nombre);
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            agregar();
+        }
+        public void agregar()
+        {
+            string nombre = tbNombre.Text.Trim();
+            if (string.IsNullOrEmpty(nombre) )
+            {
+                MessageBox.Show("No puede quedar el nombre vacío");
+                tbNombre.Focus();
+                return;
+            }
+            cmbNombre.Items.Add(nombre);
+            tbNombre.Text = "";
+            tbNombre.Focus();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbNombre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbNombres2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
